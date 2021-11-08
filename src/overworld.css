@@ -1,0 +1,55 @@
+:root {
+    --width: 352px;
+    --height: 198px;
+    --zoom: 3;
+    --border-color: #291D4D;
+    --dialog-background: #FFF3B4;
+    --menu-background: #FFE8D2;
+    --menu-border-color: #A48465;
+    --menu-font-color: #3A160D;
+    --menu-selected-background: #7fc2ff;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: #333;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+overworld {
+    position: relative;
+    display: inline-block;
+    width: var(--width);
+    height: var(--height);
+    image-rendering: pixelated;
+    margin: 0 auto;
+    background-color: #fff;
+    outline: 1px solid #fff;
+    transform: scale(var(--zoom)) translateX(50%) translateY(50%);
+    overflow: hidden;
+}
+
+overworld .viewport {
+    width: 100%;
+    height: 100%;
+    background: #333;
+}
+
+overworld .camera {
+    will-change: transform;
+}
+
+overworld .lower, 
+overworld .upper {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: var(--width);
+    height: var(--height);
+    background-repeat: no-repeat;
+}

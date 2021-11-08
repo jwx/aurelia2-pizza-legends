@@ -1,0 +1,11 @@
+<bindable name="object"></bindable>
+
+<div class="object" style="
+    transform: translate(${object.x - 8}px, ${object.y - 18}px); 
+    z-index: ${object.y};
+">
+    <img if.bind="object.sprite.useShadow" src="${object.sprite.shadow.src}" width="32" height="32" class="shadow">
+    <img src="${object.sprite.image.src}" width="128" height="128" class="avatar" style="
+        transform: translate(${object.sprite.frameX * -32}px, ${object.sprite.frameY * -32}px);
+    ">
+</div>

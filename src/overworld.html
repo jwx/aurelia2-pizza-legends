@@ -1,0 +1,13 @@
+<import from="./object.html"></import>
+<import from="./text-message"></import>
+
+<div ref="viewportElement" class="viewport">
+    <div class="camera" style="transform: translate(${-camera.x}px, ${-camera.y}px);">
+        <div class="lower" style="background-image: url(${map.lowerImage.src})"></div>
+        <div class="objects">
+            <object repeat.for="object of objects" object.bind="object"></object>
+        </div>
+        <div class="upper" style="background-image: url(${map.upperImage.src})"></div>
+    </div>
+    <text-message if.bind="textMessage" text-message.bind="textMessage"></text-message>
+</div>
