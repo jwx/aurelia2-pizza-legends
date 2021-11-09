@@ -1,5 +1,5 @@
 import { bindable } from "aurelia";
-import { Keyboard } from "./keyboard";
+import { Keyboard } from "../lib/keyboard";
 
 export class TextMessage {
   @bindable textMessage;

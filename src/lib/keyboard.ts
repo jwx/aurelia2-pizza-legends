@@ -12,7 +12,6 @@ export class Keyboard {
                     return;
                 }
                 subscriber.pressedKeys.add(event.code);
-                console.log(subscriber.pressedKeys);
                 return;
             }
         }

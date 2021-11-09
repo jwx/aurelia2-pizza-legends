@@ -1,5 +1,5 @@
-import { Person } from "./person";
-import { Utils } from "./utils";
+import { Person } from "../lib/person";
+import { Utils } from "../lib/utils";
 
 export const OverworldMaps = {
   DemoRoom: {

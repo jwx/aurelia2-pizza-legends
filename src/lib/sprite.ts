@@ -1,5 +1,3 @@
-import { Utils } from "./utils";
-
 export class Sprite {
   public image = new Image();
   public isLoaded = false;
@@ -27,7 +25,6 @@ export class Sprite {
   public frameLimit = 8;
   public animationFrameProgress = this.animationFrameLimit;
   public frameProgress = 0;
-
 
   public frameX = 0;
   public frameY = 0;

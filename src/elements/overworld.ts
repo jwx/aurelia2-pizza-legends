@@ -1,8 +1,8 @@
-import { OverworldMaps } from './overworld-maps';
-import { OverworldMap } from "./overworld-map";
-import { Keyboard } from './keyboard';
-import { DirectionInput } from './direction-input';
-import { Utils } from './utils';
+import { OverworldMaps } from '../data/overworld-maps';
+import { OverworldMap } from "../lib/overworld-map";
+import { Keyboard } from '../lib/keyboard';
+import { DirectionInput } from '../lib/direction-input';
+import { Utils } from '../lib/utils';
 
 export class Overworld {
   public viewportElement;

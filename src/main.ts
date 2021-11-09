@@ -1,5 +1,5 @@
 import Aurelia from 'aurelia';
-import { MyApp } from './my-app';
+import { MyApp } from './elements/my-app';
 
 Aurelia
   .app(MyApp)

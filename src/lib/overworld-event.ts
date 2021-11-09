@@ -1,4 +1,4 @@
-import { OverworldMaps } from "./overworld-maps";
+import { OverworldMaps } from "../data/overworld-maps";
 import { Utils } from "./utils";
 
 export class OverworldEvent {
