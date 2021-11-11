@@ -1,5 +1,6 @@
 <import from="./object.html"></import>
 <import from="./text-message"></import>
+<import from="./battle.html"></import>
 
 <div ref="viewportElement" class="viewport">
     <div class="camera" style="transform: translate(${-camera.x}px, ${-camera.y}px);">
@@ -11,3 +12,4 @@
     </div>
     <text-message if.bind="textMessage" text-message.bind="textMessage"></text-message>
 </div>
+<battle if.bind="battle" battle.bind="battle"></battle>

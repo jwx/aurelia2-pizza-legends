@@ -1,4 +1,5 @@
 import { OverworldMaps } from "../data/overworld-maps";
+import { Pizzas } from "../data/pizzas";
 import { Utils } from "./utils";
 
 export class OverworldEvent {
@@ -66,12 +67,52 @@ export class OverworldEvent {
     ], 300).finished;
 
     this.map.overworld.startMap(OverworldMaps[this.event.map]);
-    
+
     await this.map.overworld.viewportElement.animate([
       { opacity: 0 },
       { opacity: 1 }
     ], 300).finished;
     resolve();
+  }
+
+  battle(resolve) {
+    this.map.overworld.battle = {
+      combatants: {
+        "player1": {
+          ...Pizzas.s001,
+          team: "player",
+          hp: 30,
+          maxHp: 50,
+          xp: 75,
+          maxXp: 100,
+          level: 1,
+          status: null
+        },
+        "enemy1": {
+          ...Pizzas.v001,
+          team: "enemy",
+          hp: 20,
+          maxHp: 50,
+          xp: 20,
+          maxXp: 100,
+          level: 1,
+        },
+        "enemy2": {
+          ...Pizzas.f001,
+          team: "enemy",
+          hp: 25,
+          maxHp: 50,
+          xp: 30,
+          maxXp: 100,
+          level: 1,
+        },
+      },
+      activeCombatants: {
+        player: "player1",
+        enemy: "enemy2",
+      },
+      resolve,
+    };
   }
 
   init() {

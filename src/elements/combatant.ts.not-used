@@ -1,0 +1,13 @@
+import { bindable } from "aurelia";
+
+export class Combatant {
+    @bindable combatant;
+
+    get hpPercent() {
+        return Math.max(this.combatant.hp, 0) / this.combatant.maxHp * 100;
+    }
+
+    get xpPercent() {
+        return this.combatant.xp / this.combatant.maxXp * 100;
+    }
+}

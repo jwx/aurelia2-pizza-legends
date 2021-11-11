@@ -1,0 +1,15 @@
+<import from="./combatant.html"></import>
+
+<bindable name="battle"></bindable>
+
+<div class="battle">
+    <div class="hero">
+        <img src="${'/images/characters/people/hero.png'}" alt="Hero" />
+    </div>
+    <div class="enemy">
+        <img src="${'/images/characters/people/npc3.png'}" alt="Enemy" />
+    </div>
+
+    <combatant combatant.bind="battle.combatants[battle.activeCombatants.player]"></combatant>
+    <combatant combatant.bind="battle.combatants[battle.activeCombatants.enemy]"></combatant>
+</div>

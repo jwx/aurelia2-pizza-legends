@@ -9,6 +9,7 @@ export class Overworld {
   public map = null;
 
   public textMessage = null;
+  public battle = null;
 
   private actionListener;
   private directionInput;
@@ -52,6 +53,24 @@ export class Overworld {
   bindActionInput() {
     //Is there a person here to talk to?
     this.actionListener = Keyboard.subscribe('Enter', () => this.map.checkForActionCutscene());
+
+    // Temporarily start battle
+    Keyboard.subscribe('Space', () => {
+      if (this.battle == null) {
+        this.map.startCutscene([
+          { type: 'battle' },
+        ]);
+      } else {
+        this.battle.resolve();
+        this.battle = null;
+      }
+    });
+    // Temporarily set battle enemy
+    Keyboard.subscribe(['Digit1', 'Digit2'], (e) => {
+      if (this.battle != null) {
+        this.battle.activeCombatants.enemy = e.code.replace('Digit', 'enemy');
+      }
+    });
   }
 
   bindHeroPositionCheck() {
@@ -80,5 +99,9 @@ export class Overworld {
     this.directionInput.init();
 
     this.startGameLoop();
+
+    // this.map.startCutscene([
+    //   { type: 'battle' },
+    // ]);
   }
 }
