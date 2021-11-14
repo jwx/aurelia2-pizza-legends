@@ -30,6 +30,10 @@ export class Utils {
     return "up"
   }
 
+  static wait(ms) {
+    return new Promise(resolve => setTimeout(() => resolve(undefined), ms));
+  }
+
   static emitEvent(name, detail) {
     const event = new CustomEvent(name, {
       detail

@@ -1,5 +1,6 @@
 import { OverworldMaps } from "../data/overworld-maps";
 import { Pizzas } from "../data/pizzas";
+import { Combatant } from "./combatant";
 import { Utils } from "./utils";
 
 export class OverworldEvent {
@@ -78,7 +79,7 @@ export class OverworldEvent {
   battle(resolve) {
     this.map.overworld.battle = {
       combatants: {
-        "player1": {
+        "player1": new Combatant().update({
           ...Pizzas.s001,
           team: "player",
           hp: 30,
@@ -87,8 +88,8 @@ export class OverworldEvent {
           maxXp: 100,
           level: 1,
           status: null
-        },
-        "enemy1": {
+        }),
+        "enemy1": new Combatant().update({
           ...Pizzas.v001,
           team: "enemy",
           hp: 20,
@@ -96,8 +97,8 @@ export class OverworldEvent {
           xp: 20,
           maxXp: 100,
           level: 1,
-        },
-        "enemy2": {
+        }),
+        "enemy2":new Combatant().update( {
           ...Pizzas.f001,
           team: "enemy",
           hp: 25,
@@ -105,7 +106,7 @@ export class OverworldEvent {
           xp: 30,
           maxXp: 100,
           level: 1,
-        },
+        }),
       },
       activeCombatants: {
         player: "player1",

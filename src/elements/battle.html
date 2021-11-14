@@ -1,6 +1,6 @@
-<import from="./combatant.html"></import>
-
-<bindable name="battle"></bindable>
+<import from="./combatant"></import>
+<import from="./text-message"></import>
+<import from="./submission-menu"></import>
 
 <div class="battle">
     <div class="hero">
@@ -13,3 +13,5 @@
     <combatant combatant.bind="battle.combatants[battle.activeCombatants.player]"></combatant>
     <combatant combatant.bind="battle.combatants[battle.activeCombatants.enemy]"></combatant>
 </div>
+<text-message if.bind="textMessage" text-message.bind="textMessage"></text-message>
+<submission-menu if.bind="submissionMenu" submission-menu.bind="submissionMenu"></submission-menu>

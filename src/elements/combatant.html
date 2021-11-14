@@ -8,12 +8,12 @@
     </div>
     <img class="type" src="${combatant.icon}" alt="${combatant.type}" />
     <div class="life-container">
-        <div style="width: ${(combatant.hp > 0 ? combatant.hp : 0) / combatant.maxHp * 100}%; height: 1px; background-color: #82ff71;"></div>
-        <div style="width: ${(combatant.hp > 0 ? combatant.hp : 0) / combatant.maxHp * 100}%; height: 2px; background-color: #3ef126;"></div>
+        <div style="width: ${hpPercent}%; height: 1px; background-color: #82ff71;"></div>
+        <div style="width: ${hpPercent}%; height: 2px; background-color: #3ef126;"></div>
     </div>
     <div class="xp-container">
-        <div style="width: ${combatant.xp / combatant.maxXp * 100}%; height: 1px; background-color: #ffd76a;"></div>
-        <div style="width: ${combatant.xp / combatant.maxXp * 100}%; height: 1px; background-color: #ffc934;"></div>
+        <div style="width: ${xpPercent}%; height: 1px; background-color: #ffd76a;"></div>
+        <div style="width: ${xpPercent}%; height: 1px; background-color: #ffc934;"></div>
     </div>
     <!-- <svg viewBox="0 0 26 3" class="life-container">
         <rect x=0 y=0 width="0%" height=1 fill="#82ff71" />
@@ -25,4 +25,4 @@
     </svg> -->
     <p class="status">${combatant.status || ''}</p>
 </div>
-<img class="pizza" src="${combatant.src}" alt="${combatant.name}" data-team="${combatant.team}">
+<img ref="pizzaElement" class="pizza" src="${combatant.src}" alt="${combatant.name}" data-team="${combatant.team}">
